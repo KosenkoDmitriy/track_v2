@@ -1,0 +1,11 @@
+export PULL_REQUEST_URL=${CI_PULL_REQUEST}
+export PULL_REQUEST_ID=`echo $PULL_REQUEST_URL | sed 's#.*/##'`
+
+if [ ! -z $PULL_REQUEST_ID ]; then
+  echo "Pull Request Found Id "
+  echo $PULL_REQUEST_ID
+  bin/bundle exec pronto run -f github_pr -c origin/master || true
+else
+  echo "No Pull Request Found"
+  bin/bundle exec pronto run -f github -c origin/master
+fi
