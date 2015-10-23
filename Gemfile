@@ -36,15 +36,18 @@ group :development, :test do
   gem 'byebug'
 end
 
-group :test do
-  gem 'pronto'
-  gem 'pronto-rubocop', require: false
-end
-
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'rubocop', require: false
+  gem 'pronto'
+  gem 'pronto-rubocop', require: false
+  gem 'pronto-brakeman', require: false
+  gem 'pronto-rails_schema', require: false
+  gem 'pronto-jshint', require: false
+
+  # Required for JShint
+  gem 'therubyracer'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

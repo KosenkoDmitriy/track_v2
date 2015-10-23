@@ -4,8 +4,8 @@ export PULL_REQUEST_ID=`echo $PULL_REQUEST_URL | sed 's#.*/##'`
 if [ ! -z $PULL_REQUEST_ID ]; then
   echo "Pull Request Found Id "
   echo $PULL_REQUEST_ID
-  bin/bundle exec pronto run -f github_pr -c origin/master || true
+  bin/bundle exec pronto run -f github_pr -c origin/develop || true
 else
   echo "No Pull Request Found"
-  bin/bundle exec pronto run -f github -c origin/master
+  bin/bundle exec pronto run -f github -c origin/develop
 fi
