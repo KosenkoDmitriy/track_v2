@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/KosenkoDmitriy/spree_shipstation.git
+  revision: d27fd3b521be4c33c38c39bafefb7a4ce9645db6
+  branch: 3-0-v4
+  specs:
+    spree_shipstation (2.0.1)
+      spree_core (~> 3.0.0)
+
+GIT
   remote: git://github.com/spree/spree_auth_devise.git
   revision: 7b24ad16239367dc15f96a80cc2a954a822cc6af
   branch: 3-0-stable
@@ -421,6 +429,7 @@ DEPENDENCIES
   spree (= 3.0.4)
   spree_auth_devise!
   spree_gateway!
+  spree_shipstation!
   spring
   sqlite3
   therubyracer
