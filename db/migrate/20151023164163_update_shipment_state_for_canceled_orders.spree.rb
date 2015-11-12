@@ -2,7 +2,7 @@
 class UpdateShipmentStateForCanceledOrders < ActiveRecord::Migration
   def up
     shipments = Spree::Shipment.joins(:order).
-      where("spree_orders.state = 'canceled'")
+      where("spree_orders.state = 'cancelled'")
     case Spree::Shipment.connection.adapter_name
     when "SQLite3"
       shipments.update_all("state = 'cancelled'")
