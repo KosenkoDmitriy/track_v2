@@ -14,14 +14,14 @@ Spree.config do |config|
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
   if Rails.env.production?
-    config.shipstation_username = "mobispoke"
-    config.shipstation_password = "mobispoke123"
+    config.shipstation_username = 'mobispoke'
+    config.shipstation_password = 'mobispoke123'
   else
-    config.shipstation_username = "mobispoke"
-    config.shipstation_password = "mobispoke123"
+    config.shipstation_username = 'mobispoke'
+    config.shipstation_password = 'mobispoke123'
   end
 
-  config.shipstation_weight_units = "Grams" # Grams, Ounces or Pounds
+  config.shipstation_weight_units = 'Grams' # Grams, Ounces or Pounds
 
   # choose which number to send shipstation, use :shipment or :order, default is :shipment
   config.shipstation_number = :shipment
