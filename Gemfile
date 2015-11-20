@@ -58,6 +58,6 @@ gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 
 # connecting a custom shop to the ShipStation
-#gem "spree_shipstation", github: "tracksmith/spree_shipstation", branch: '3-0-stable'
-gem "spree_shipstation", github: "KosenkoDmitriy/spree_shipstation", branch: "3-0-v4"
-
+# gem 'spree_shipstation', github: 'tracksmith/spree_shipstation', branch: '3-0-stable'
+gem 'spree_shipstation', github: 'KosenkoDmitriy/spree_shipstation', branch: '3-0-stable'
+# gem 'spree_shipstation', path: '../spree_shipstation_dk' # for local repository
