@@ -53,13 +53,12 @@ The format for the change log should adhere to [Keep a CHANGELOG](http://keepach
 
 - Complete the installation in an existing Rails application:
 
+  $ bin/rails g alchemy:devise:install
   $ bin/rake alchemy:install
+  $ bin/rails server
 
-- Complete the upgrade of an existing Alchemy installation:
+  and point your browser to http://localhost:3000/admin and follow the onscreen instructions to finalize the installation.
 
-  $ bin/rake alchemy:upgrade
-
-and follow the onscreen instructions.
 
 Need help? Try:
 
