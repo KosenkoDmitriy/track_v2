@@ -53,11 +53,15 @@ group :development do
   gem 'spring'
 end
 
-gem 'spree', '3.0.4'
+gem 'spree', github: 'spree/spree', branch: '3-0-stable'
 gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 
 # connecting a custom shop to the ShipStation
-# gem 'spree_shipstation', github: 'tracksmith/spree_shipstation', branch: '3-0-stable'
 gem 'spree_shipstation', github: 'KosenkoDmitriy/spree_shipstation', branch: '3-0-stable'
 # gem 'spree_shipstation', path: '../spree_shipstation_dk' # for local repository
+
+# ALCHEMY
+# gem 'alchemy_cms', github: 'magiclabs/alchemy_cms', branch: 'master'
+gem 'alchemy_cms', github: 'KosenkoDmitriy/alchemy_cms', branch: '3.2-rails4.2.4'
+# gem 'alchemy_cms', path: '../alchemy_cms_dk' # for local repository
