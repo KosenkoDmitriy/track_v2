@@ -63,5 +63,7 @@ gem 'spree_shipstation', github: 'KosenkoDmitriy/spree_shipstation', branch: '3-
 
 # ALCHEMY
 # gem 'alchemy_cms', github: 'magiclabs/alchemy_cms', branch: 'master'
-gem 'alchemy_cms', github: 'KosenkoDmitriy/alchemy_cms', branch: '3.2-rails4.2.4'
+gem 'alchemy_cms', github: 'KosenkoDmitriy/alchemy_cms', branch: '3.2-rails4.2.4' # '~> 4.0.0.beta'
 # gem 'alchemy_cms', path: '../alchemy_cms_dk' # for local repository
+
+gem 'alchemy-devise', github: 'AlchemyCMS/alchemy-devise', branch: 'master' # '~> 3.2.0'

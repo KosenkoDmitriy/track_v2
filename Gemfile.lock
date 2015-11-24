@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/AlchemyCMS/alchemy-devise.git
+  revision: ee3777df515298ae5f31c37f8780204af2c0357c
+  branch: master
+  specs:
+    alchemy-devise (4.0.0.beta)
+      alchemy_cms (>= 4.0.0.beta, < 5.0)
+      devise (~> 3.4)
+
+GIT
   remote: git://github.com/KosenkoDmitriy/alchemy_cms.git
   revision: b1ef791d9c52fc83f4436af6019ff940a9381cbe
   branch: 3.2-rails4.2.4
@@ -497,6 +506,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  alchemy-devise!
   alchemy_cms!
   byebug
   coffee-rails (~> 4.1.0)

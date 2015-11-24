@@ -45,3 +45,25 @@ The change log should be updated when major changes occur on the project. These 
 changes that are interesting to a non-technical user and in terms that a non-tecnical user can easily understand.
 
 The format for the change log should adhere to [Keep a CHANGELOG](http://keepachangelog.com)
+
+
+-------------------------------------------------------------
+#### Alchemy CMS
+-------------------------------------------------------------
+
+- Complete the installation in an existing Rails application:
+
+  $ bin/rake alchemy:install
+
+- Complete the upgrade of an existing Alchemy installation:
+
+  $ bin/rake alchemy:upgrade
+
+and follow the onscreen instructions.
+
+Need help? Try:
+
+* http://stackoverflow.com/questions/tagged/alchemy-cms
+* http://groups.google.com/group/alchemy-cms
+* irc://irc.freenode.net#alchemy_cms
+-------------------------------------------------------------
