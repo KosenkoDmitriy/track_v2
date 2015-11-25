@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Spree::Core::Engine, :at => '/shop'
+  mount Spree::Core::Engine, at: '/shop'
 
   # mount Alchemy::Engine, at: '/'
   mount Alchemy::Engine => '/', :as => 'alchemy'

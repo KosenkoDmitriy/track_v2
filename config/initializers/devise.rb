@@ -17,7 +17,7 @@ Devise.setup do |config|
   config.mailer_sender = Alchemy::Config.get(:mailer)['mail_from']
 
   # Configure the class responsible to send e-mails.
-  config.mailer = "Alchemy::Notifications"
+  config.mailer = 'Alchemy::Notifications'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -25,7 +25,7 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
-  config.parent_controller = "Alchemy::BaseController"
+  config.parent_controller = 'Alchemy::BaseController'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
