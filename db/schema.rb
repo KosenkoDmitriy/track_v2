@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124121529) do
+ActiveRecord::Schema.define(version: 20151125132851) do
 
   create_table "alchemy_attachments", force: :cascade do |t|
     t.string   "name"
@@ -159,6 +159,20 @@ ActiveRecord::Schema.define(version: 20151124121529) do
   end
 
   add_index "alchemy_essence_selects", ["value"], name: "index_alchemy_essence_selects_on_value"
+
+  create_table "alchemy_essence_spree_products", force: :cascade do |t|
+    t.integer "spree_product_id"
+  end
+
+  add_index "alchemy_essence_spree_products", ["spree_product_id"], name: "index_alchemy_essence_spree_products_on_spree_product_id"
+
+  create_table "alchemy_essence_spree_taxons", force: :cascade do |t|
+    t.integer  "taxon_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "alchemy_essence_spree_taxons", ["taxon_id"], name: "index_alchemy_essence_spree_taxons_on_taxon_id"
 
   create_table "alchemy_essence_texts", force: :cascade do |t|
     t.text     "body"

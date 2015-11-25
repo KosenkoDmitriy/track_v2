@@ -6,7 +6,3 @@
   unique: true
   elements: [article]
   autogenerate: [article]
-- name: product
-  elements: [product]
-- name: products
-  elements: [product_category]
