@@ -48,21 +48,17 @@ The format for the change log should adhere to [Keep a CHANGELOG](http://keepach
 
 
 -------------------------------------------------------------
-#### Alchemy CMS
+### Installation
 -------------------------------------------------------------
 
 - Complete the installation in an existing Rails application:
-
-  $ bin/rails g alchemy:devise:install
-  $ bin/rake alchemy:install
+  minimum:
+  $ bundle exec rake db:migrate
+  $ bundle exec rake db:seed
+  $ bundle exec rake spree_sample:load # optional
   $ bin/rails server
 
-  and point your browser to http://localhost:3000/admin and follow the onscreen instructions to finalize the installation.
+  login to spree backend on http://localhost:3000/shop/admin
+  then http://localhost:3000/admin (alchemy backend)
+  spree frontend: http://localhost:3000/shop
 
-
-Need help? Try:
-
-* http://stackoverflow.com/questions/tagged/alchemy-cms
-* http://groups.google.com/group/alchemy-cms
-* irc://irc.freenode.net#alchemy_cms
--------------------------------------------------------------
