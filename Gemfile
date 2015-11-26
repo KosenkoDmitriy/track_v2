@@ -62,4 +62,7 @@ gem 'spree_shipstation', github: 'KosenkoDmitriy/spree_shipstation', branch: '3-
 # gem 'spree_shipstation', path: '../spree_shipstation_dk' # for local repository
 
 # ALCHEMY
-gem 'alchemy_spree', github: 'magiclabs/alchemy_spree', branch: 'master' # v 1.0.0.beta and alchemy_cms '~> 3.1'
+gem 'alchemy_spree', github: 'magiclabs/alchemy_spree', branch: 'master' # '~> 1.0.0.beta' and alchemy_cms '~> 3.1'
+
+# MiniCart
+gem 'spree_minicart', github: 'KosenkoDmitriy/spree_minicart', branch: '3-0-stable'
