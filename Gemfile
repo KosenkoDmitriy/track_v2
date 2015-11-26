@@ -54,7 +54,7 @@ group :development do
 end
 
 gem 'spree', github: 'spree/spree', branch: '3-0-stable'
-gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable'
+gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable' # stripe included (details here www.stripe.com and in readme)
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 
 # connecting a custom shop to the ShipStation
@@ -63,7 +63,3 @@ gem 'spree_shipstation', github: 'KosenkoDmitriy/spree_shipstation', branch: '3-
 
 # ALCHEMY
 gem 'alchemy_spree', github: 'magiclabs/alchemy_spree', branch: 'master' # v 1.0.0.beta and alchemy_cms '~> 3.1'
-
-# Payment system - use 'activemerchant' or 'spree_gateway' or https://github.com/stripe/stripe-ruby
-# Stripe
-# gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable'
