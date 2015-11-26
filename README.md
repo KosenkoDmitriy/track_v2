@@ -1,5 +1,32 @@
 # Tracksmith
 
+## Installation
+
+
+- Complete the installation in an existing Rails application:
+  minimum:
+
+  $ `bundle exec rake db:migrate`
+
+  $ `bundle exec rake db:seed`
+
+  $ `bundle exec rake spree_sample:load` # optional
+
+  $ `bin/rails server1
+
+  login to spree backend on http://localhost:3000/shop/admin
+
+  then http://localhost:3000/admin (alchemy backend)
+
+  spree frontend: http://localhost:3000/shop
+
+
+### Stripe
+- add this `gem 'activemerchant', '~> 1.47.0'` to Gemfile if needed;
+- create the stripe account https://dashboard.stripe.com/register;
+- secret keys on https://dashboard.stripe.com/account/apikeys;
+- valid test cards here: https://stripe.com/docs/testing;
+- login to spree backend go to http://yourhost.com/shop/admin/payment_methods/new (Configuration >> Payment Methods > New Payment Method) and select 'Spree::Gateway::StripeGateway' Provider.
 
 ### Build Status
 Master: [![Circle CI](https://circleci.com/gh/tracksmith/track_v2/tree/master.svg?style=svg&circle-token=b3b3407b0213ca2407b0332de02d86e20a0b382a)](https://circleci.com/gh/tracksmith/track_v2/tree/master) Develop: [![Circle CI](https://circleci.com/gh/tracksmith/track_v2/tree/develop.svg?style=svg&circle-token=b3b3407b0213ca2407b0332de02d86e20a0b382a)](https://circleci.com/gh/tracksmith/track_v2/tree/develop)
@@ -46,19 +73,7 @@ changes that are interesting to a non-technical user and in terms that a non-tec
 
 The format for the change log should adhere to [Keep a CHANGELOG](http://keepachangelog.com)
 
-
--------------------------------------------------------------
-### Installation
--------------------------------------------------------------
-
-- Complete the installation in an existing Rails application:
-  minimum:
-  $ bundle exec rake db:migrate
-  $ bundle exec rake db:seed
-  $ bundle exec rake spree_sample:load # optional
-  $ bin/rails server
-
-  login to spree backend on http://localhost:3000/shop/admin
-  then http://localhost:3000/admin (alchemy backend)
-  spree frontend: http://localhost:3000/shop
-
+## [3-0-stable]
+### Added
+- spree_shipstation v 3.1
+- spree_alchemy v 3.0.4 with alchemy v 3.1
