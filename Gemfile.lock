@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/KosenkoDmitriy/spree_affiliate.git
+  revision: ee1448c77691b9544d621aea1a3b33a56fcb7feb
+  branch: 3-0-stable
+  specs:
+    spree_affiliate (3.0.4)
+      spree_core (~> 3.0.4)
+
+GIT
   remote: git://github.com/KosenkoDmitriy/spree_minicart.git
   revision: 5a6df00ba3b5b8ef59d733980c7f3155c70aa139
   branch: 3-0-stable
@@ -524,6 +532,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spree!
+  spree_affiliate!
   spree_auth_devise!
   spree_gateway!
   spree_minicart!

@@ -32,6 +32,10 @@
 $ 'bundle install'
 $ `bundle exec rails g spree_minicart:install`
 
+### Affiliate and Store Credits
+`bundle install`
+`bundle exec rails g spree_affiliate:install`
+`bundle exec rails g spree_store_credits:install`
 
 ### Build Status
 Master: [![Circle CI](https://circleci.com/gh/tracksmith/track_v2/tree/master.svg?style=svg&circle-token=b3b3407b0213ca2407b0332de02d86e20a0b382a)](https://circleci.com/gh/tracksmith/track_v2/tree/master) Develop: [![Circle CI](https://circleci.com/gh/tracksmith/track_v2/tree/develop.svg?style=svg&circle-token=b3b3407b0213ca2407b0332de02d86e20a0b382a)](https://circleci.com/gh/tracksmith/track_v2/tree/develop)
@@ -83,3 +87,4 @@ The format for the change log should adhere to [Keep a CHANGELOG](http://keepach
 - spree_shipstation v 3.1
 - spree_alchemy v 3.0.4 with alchemy v 3.1
 - spree_minicart v 3.0.4
+- spree_affiliate v 3.0.4

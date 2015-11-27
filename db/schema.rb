@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125132851) do
+ActiveRecord::Schema.define(version: 20151127121337) do
 
   create_table "alchemy_attachments", force: :cascade do |t|
     t.string   "name"
@@ -375,6 +375,23 @@ ActiveRecord::Schema.define(version: 20151125132851) do
   add_index "spree_adjustments", ["eligible"], name: "index_spree_adjustments_on_eligible"
   add_index "spree_adjustments", ["order_id"], name: "index_spree_adjustments_on_order_id"
   add_index "spree_adjustments", ["source_id", "source_type"], name: "index_spree_adjustments_on_source_id_and_source_type"
+
+  create_table "spree_affiliate_events", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "reward_id"
+    t.string   "reward_type"
+    t.integer  "affiliate_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_affiliates", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "partner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_assets", force: :cascade do |t|
     t.integer  "viewable_id"
