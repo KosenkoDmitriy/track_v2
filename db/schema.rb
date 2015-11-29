@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125132851) do
+ActiveRecord::Schema.define(version: 20151129155240) do
 
   create_table "alchemy_attachments", force: :cascade do |t|
     t.string   "name"
@@ -376,6 +376,23 @@ ActiveRecord::Schema.define(version: 20151125132851) do
   add_index "spree_adjustments", ["order_id"], name: "index_spree_adjustments_on_order_id"
   add_index "spree_adjustments", ["source_id", "source_type"], name: "index_spree_adjustments_on_source_id_and_source_type"
 
+  create_table "spree_affiliate_events", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "reward_id"
+    t.string   "reward_type"
+    t.integer  "affiliate_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_affiliates", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "partner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spree_assets", force: :cascade do |t|
     t.integer  "viewable_id"
     t.string   "viewable_type"
@@ -395,6 +412,14 @@ ActiveRecord::Schema.define(version: 20151125132851) do
   add_index "spree_assets", ["viewable_id"], name: "index_assets_on_viewable_id"
   add_index "spree_assets", ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
 
+  create_table "spree_assets_variants", force: :cascade do |t|
+    t.integer "image_id"
+    t.integer "variant_id"
+  end
+
+  add_index "spree_assets_variants", ["image_id"], name: "index_spree_assets_variants_on_image_id"
+  add_index "spree_assets_variants", ["variant_id"], name: "index_spree_assets_variants_on_variant_id"
+
   create_table "spree_calculators", force: :cascade do |t|
     t.string   "type"
     t.integer  "calculable_id"
@@ -408,6 +433,21 @@ ActiveRecord::Schema.define(version: 20151125132851) do
   add_index "spree_calculators", ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type"
   add_index "spree_calculators", ["deleted_at"], name: "index_spree_calculators_on_deleted_at"
   add_index "spree_calculators", ["id", "type"], name: "index_spree_calculators_on_id_and_type"
+
+  create_table "spree_chimpy_order_sources", force: :cascade do |t|
+    t.integer  "order_id"
+    t.string   "campaign_id"
+    t.string   "email_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_chimpy_subscribers", force: :cascade do |t|
+    t.string   "email",                     null: false
+    t.boolean  "subscribed", default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_countries", force: :cascade do |t|
     t.string   "iso_name"
@@ -676,6 +716,16 @@ ActiveRecord::Schema.define(version: 20151125132851) do
   add_index "spree_product_option_types", ["option_type_id"], name: "index_spree_product_option_types_on_option_type_id"
   add_index "spree_product_option_types", ["position"], name: "index_spree_product_option_types_on_position"
   add_index "spree_product_option_types", ["product_id"], name: "index_spree_product_option_types_on_product_id"
+
+  create_table "spree_product_packages", force: :cascade do |t|
+    t.integer  "product_id",             null: false
+    t.integer  "length",     default: 0, null: false
+    t.integer  "width",      default: 0, null: false
+    t.integer  "height",     default: 0, null: false
+    t.integer  "weight",     default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_product_properties", force: :cascade do |t|
     t.string   "value"
@@ -1242,6 +1292,7 @@ ActiveRecord::Schema.define(version: 20151125132851) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.boolean  "subscribed"
   end
 
   add_index "spree_users", ["deleted_at"], name: "index_spree_users_on_deleted_at"

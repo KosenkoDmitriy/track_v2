@@ -28,9 +28,6 @@
 - valid test cards here: https://stripe.com/docs/testing;
 - login to spree backend go to http://yourhost.com/shop/admin/payment_methods/new (Configuration >> Payment Methods > New Payment Method) and select 'Spree::Gateway::StripeGateway' Provider.
 
-### Spree Mini Cart extension
-$ 'bundle install'
-$ `bundle exec rails g spree_minicart:install`
 
 
 ### Build Status
@@ -83,3 +80,4 @@ The format for the change log should adhere to [Keep a CHANGELOG](http://keepach
 - spree_shipstation v 3.1
 - spree_alchemy v 3.0.4 with alchemy v 3.1
 - spree_minicart v 3.0.4
+- spree_chimpy v 2.0.0.alpha
