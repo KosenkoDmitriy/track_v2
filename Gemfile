@@ -66,3 +66,4 @@ gem 'alchemy_spree', github: 'magiclabs/alchemy_spree', branch: 'master' # '~> 1
 
 # MiniCart
 gem 'spree_minicart', github: 'KosenkoDmitriy/spree_minicart', branch: '3-0-stable'
+gem 'spree_variant_options_select', github: 'KosenkoDmitriy/spree_variant_options_select', branch: '3-0-stable'

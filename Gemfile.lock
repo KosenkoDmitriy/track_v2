@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/KosenkoDmitriy/spree_minicart.git
-  revision: 5a6df00ba3b5b8ef59d733980c7f3155c70aa139
+  revision: cc827aae5376c26984bb19cfa0cbc6863decd559
   branch: 3-0-stable
   specs:
     spree_minicart (3.0.4)
@@ -8,10 +8,18 @@ GIT
 
 GIT
   remote: git://github.com/KosenkoDmitriy/spree_shipstation.git
-  revision: a310da9617f706f92c35326f685cab7f13c54be3
+  revision: 48e509cca25f7ec132295f1e44364b5dbcade73c
   branch: 3-0-stable
   specs:
     spree_shipstation (3.0.4)
+      spree_core (~> 3.0.4)
+
+GIT
+  remote: git://github.com/KosenkoDmitriy/spree_variant_options_select.git
+  revision: 1e6ca4dce48d3dcdf21749e422781477d30fc754
+  branch: 3-0-stable
+  specs:
+    spree_variant_options_select (3.0.4)
       spree_core (~> 3.0.4)
 
 GIT
@@ -208,7 +216,7 @@ GEM
       slim (>= 1.3.6, < 4.0)
       terminal-table (~> 1.4)
     builder (3.2.2)
-    byebug (8.2.0)
+    byebug (8.2.1)
     camertron-eprun (1.1.0)
     cancancan (1.10.1)
     canonical-rails (0.0.11)
@@ -528,6 +536,7 @@ DEPENDENCIES
   spree_gateway!
   spree_minicart!
   spree_shipstation!
+  spree_variant_options_select!
   spring
   sqlite3
   therubyracer
