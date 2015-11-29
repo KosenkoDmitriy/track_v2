@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125132851) do
+ActiveRecord::Schema.define(version: 20151129113749) do
 
   create_table "alchemy_attachments", force: :cascade do |t|
     t.string   "name"
@@ -376,6 +376,23 @@ ActiveRecord::Schema.define(version: 20151125132851) do
   add_index "spree_adjustments", ["order_id"], name: "index_spree_adjustments_on_order_id"
   add_index "spree_adjustments", ["source_id", "source_type"], name: "index_spree_adjustments_on_source_id_and_source_type"
 
+  create_table "spree_affiliate_events", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "reward_id"
+    t.string   "reward_type"
+    t.integer  "affiliate_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_affiliates", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "partner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spree_assets", force: :cascade do |t|
     t.integer  "viewable_id"
     t.string   "viewable_type"
@@ -676,6 +693,16 @@ ActiveRecord::Schema.define(version: 20151125132851) do
   add_index "spree_product_option_types", ["option_type_id"], name: "index_spree_product_option_types_on_option_type_id"
   add_index "spree_product_option_types", ["position"], name: "index_spree_product_option_types_on_position"
   add_index "spree_product_option_types", ["product_id"], name: "index_spree_product_option_types_on_product_id"
+
+  create_table "spree_product_packages", force: :cascade do |t|
+    t.integer  "product_id",             null: false
+    t.integer  "length",     default: 0, null: false
+    t.integer  "width",      default: 0, null: false
+    t.integer  "height",     default: 0, null: false
+    t.integer  "weight",     default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_product_properties", force: :cascade do |t|
     t.string   "value"

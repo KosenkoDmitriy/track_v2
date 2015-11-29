@@ -84,6 +84,15 @@ GIT
       spree_core (= 3.0.5.beta)
 
 GIT
+  remote: git://github.com/spree/spree_active_shipping.git
+  revision: 8514c32fe72d3690731538f0ffc278cb224cc6ed
+  branch: 3-0-stable
+  specs:
+    spree_active_shipping (3.0.0.beta)
+      active_shipping (~> 1.4.2)
+      spree_core (~> 3.0.0)
+
+GIT
   remote: git://github.com/spree/spree_auth_devise.git
   revision: f231fce43686d66fe3e6d65ba8595b4474c49895
   branch: 3-0-stable
@@ -129,6 +138,14 @@ GEM
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
     active_model_serializers (0.9.3)
       activemodel (>= 3.2)
+    active_shipping (1.4.3)
+      active_utils (~> 3.0.0)
+      activesupport (>= 3.2, < 5.0.0)
+      nokogiri (>= 1.6)
+      quantified (~> 1.0.1)
+    active_utils (3.0.0)
+      activesupport (>= 3.2)
+      i18n
     activejob (4.2.4)
       activesupport (= 4.2.4)
       globalid (>= 0.3.0)
@@ -365,6 +382,7 @@ GEM
     pronto-rubocop (0.5.0)
       pronto (~> 0.5.0)
       rubocop (~> 0.35.0)
+    quantified (1.0.1)
     rabl (0.11.6)
       activesupport (>= 2.3.14)
     rack (1.6.4)
@@ -524,6 +542,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spree!
+  spree_active_shipping!
   spree_auth_devise!
   spree_gateway!
   spree_minicart!
