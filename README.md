@@ -83,3 +83,4 @@ The format for the change log should adhere to [Keep a CHANGELOG](http://keepach
 - spree_shipstation v 3.1
 - spree_alchemy v 3.0.4 with alchemy v 3.1
 - spree_minicart v 3.0.4
+- spree_asset_variant_options v 3.0.4

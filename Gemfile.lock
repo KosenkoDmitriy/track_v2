@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/KosenkoDmitriy/spree_asset_variant_options.git
+  revision: 4d5634bab0689589b8aa57a767b0f627ab86d609
+  branch: 3-0-stable
+  specs:
+    spree_asset_variant_options (3.0.4)
+      spree_core (~> 3.0.4)
+
+GIT
   remote: git://github.com/KosenkoDmitriy/spree_minicart.git
   revision: 5a6df00ba3b5b8ef59d733980c7f3155c70aa139
   branch: 3-0-stable
@@ -524,6 +532,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spree!
+  spree_asset_variant_options!
   spree_auth_devise!
   spree_gateway!
   spree_minicart!
