@@ -82,3 +82,4 @@ The format for the change log should adhere to [Keep a CHANGELOG](http://keepach
 - spree_active_shipping v 3.0.0.beta
 - spree_asset_variant_options v 3.0.4
 - spree_affiliate v 3.0.4
+- spree_chimpy v 2.0.0.alpha
