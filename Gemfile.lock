@@ -4,6 +4,11 @@ GIT
   branch: 3-0-stable
   specs:
     spree_asset_variant_options (3.0.4)
+  remote: git://github.com/KosenkoDmitriy/spree_affiliate.git
+  revision: ee1448c77691b9544d621aea1a3b33a56fcb7feb
+  branch: 3-0-stable
+  specs:
+    spree_affiliate (3.0.4)
       spree_core (~> 3.0.4)
 
 GIT
@@ -552,6 +557,7 @@ DEPENDENCIES
   spree!
   spree_active_shipping!
   spree_asset_variant_options!
+  spree_affiliate!
   spree_auth_devise!
   spree_gateway!
   spree_minicart!
