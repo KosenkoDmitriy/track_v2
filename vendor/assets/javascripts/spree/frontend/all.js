@@ -9,6 +9,5 @@
 //= require spree/frontend
 
 //= require_tree .
-//= require spree/frontend/spree_minicart
 //= require spree/frontend/spree_asset_variant_options
 //= require spree/frontend/spree_affiliate

@@ -32,14 +32,6 @@ GIT
       spree_core (~> 3.0)
 
 GIT
-  remote: git://github.com/KosenkoDmitriy/spree_minicart.git
-  revision: cc827aae5376c26984bb19cfa0cbc6863decd559
-  branch: 3-0-stable
-  specs:
-    spree_minicart (3.0.4)
-      spree_core (~> 3.0.4)
-
-GIT
   remote: git://github.com/KosenkoDmitriy/spree_shipstation.git
   revision: 48e509cca25f7ec132295f1e44364b5dbcade73c
   branch: 3-0-stable
@@ -576,7 +568,6 @@ DEPENDENCIES
   spree_auth_devise!
   spree_chimpy!
   spree_gateway!
-  spree_minicart!
   spree_shipstation!
   spring
   sqlite3
