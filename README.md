@@ -6,13 +6,13 @@
 - Complete the installation in an existing Rails application:
   minimum:
 
-  $ `bundle exec rake db:migrate`
+  `bundle exec rake db:migrate`
 
-  $ `bundle exec rake db:seed`
+  `bundle exec rake db:seed`
 
-  $ `bundle exec rake spree_sample:load` # optional
+  `bundle exec rake spree_sample:load` # optional
 
-  $ `bin/rails server1
+  `bin/rails server`
 
   login to spree backend on http://localhost:3000/shop/admin
 

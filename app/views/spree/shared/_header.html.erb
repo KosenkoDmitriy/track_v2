@@ -1,0 +1,16 @@
+<div id="spree-header">
+  <header id="header" data-hook>
+    <div class="container">
+      <div class="row">
+        <figure id="logo" class="col-md-4" data-hook>
+          <%= logo %>
+        </figure>
+        <%= render :partial => 'spree/shared/nav_bar' %>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <!--TODO: commented because undefined variable or method 'current_order' (spree>base_helper code line 68) -->
+    <%# render :partial => 'spree/shared/main_nav_bar' if store_menu? #%>
+  </div>
+</div>
