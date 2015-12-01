@@ -77,9 +77,9 @@ The format for the change log should adhere to [Keep a CHANGELOG](http://keepach
 ## [3-0-beta]
 ### Added
 - spree_shipstation v 3.1
-- spree_minicart v 3.0.4
 - spree_active_shipping v 3.0.0.beta
 - spree_asset_variant_options v 3.0.4
 - spree_affiliate v 3.0.4
 - spree_chimpy v 2.0.0.alpha
-- spree_alchemy v 3.0.4 with alchemy v 3.1
+- alchemy_spree v 3.0.4 with alchemy cms v 3.1 incompatible with spree_minicart v 3.0.4 so far
+
