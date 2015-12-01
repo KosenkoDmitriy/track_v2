@@ -6,13 +6,13 @@
 - Complete the installation in an existing Rails application:
   minimum:
 
-  $ `bundle exec rake db:migrate`
+  `bundle exec rake db:migrate`
 
-  $ `bundle exec rake db:seed`
+  `bundle exec rake db:seed`
 
-  $ `bundle exec rake spree_sample:load` # optional
+  `bundle exec rake spree_sample:load` # optional
 
-  $ `bin/rails server1
+  `bin/rails server`
 
   login to spree backend on http://localhost:3000/shop/admin
 
@@ -74,12 +74,12 @@ changes that are interesting to a non-technical user and in terms that a non-tec
 
 The format for the change log should adhere to [Keep a CHANGELOG](http://keepachangelog.com)
 
-## [3-0-stable]
+## [3-0-beta]
 ### Added
 - spree_shipstation v 3.1
-- spree_alchemy v 3.0.4 with alchemy v 3.1
 - spree_minicart v 3.0.4
 - spree_active_shipping v 3.0.0.beta
 - spree_asset_variant_options v 3.0.4
 - spree_affiliate v 3.0.4
 - spree_chimpy v 2.0.0.alpha
+- spree_alchemy v 3.0.4 with alchemy v 3.1

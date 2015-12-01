@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151129155240) do
+ActiveRecord::Schema.define(version: 20151201133583) do
 
   create_table "alchemy_attachments", force: :cascade do |t|
     t.string   "name"
@@ -53,19 +53,17 @@ ActiveRecord::Schema.define(version: 20151129155240) do
     t.string   "name"
     t.integer  "position"
     t.integer  "page_id"
-    t.boolean  "public",            default: true
-    t.boolean  "folded",            default: false
-    t.boolean  "unique",            default: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.boolean  "public",          default: true
+    t.boolean  "folded",          default: false
+    t.boolean  "unique",          default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.integer  "cell_id"
     t.text     "cached_tag_list"
-    t.integer  "parent_element_id"
   end
 
-  add_index "alchemy_elements", ["page_id", "parent_element_id"], name: "index_alchemy_elements_on_page_id_and_parent_element_id"
   add_index "alchemy_elements", ["page_id", "position"], name: "index_elements_on_page_id_and_position"
 
   create_table "alchemy_elements_alchemy_pages", id: false, force: :cascade do |t|
@@ -99,7 +97,6 @@ ActiveRecord::Schema.define(version: 20151129155240) do
     t.integer  "updater_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "link_text"
   end
 
   create_table "alchemy_essence_htmls", force: :cascade do |t|
@@ -283,39 +280,6 @@ ActiveRecord::Schema.define(version: 20151129155240) do
 
   add_index "alchemy_sites", ["host", "public"], name: "alchemy_sites_public_hosts_idx"
   add_index "alchemy_sites", ["host"], name: "index_alchemy_sites_on_host"
-
-  create_table "alchemy_users", force: :cascade do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "login"
-    t.string   "email"
-    t.string   "gender"
-    t.string   "language"
-    t.string   "encrypted_password",     limit: 128, default: "",       null: false
-    t.string   "password_salt",          limit: 128, default: "",       null: false
-    t.integer  "sign_in_count",                      default: 0,        null: false
-    t.integer  "failed_attempts",                    default: 0,        null: false
-    t.datetime "last_request_at"
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                            null: false
-    t.datetime "updated_at",                                            null: false
-    t.integer  "creator_id"
-    t.integer  "updater_id"
-    t.text     "cached_tag_list"
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.string   "alchemy_roles",                      default: "member"
-  end
-
-  add_index "alchemy_users", ["alchemy_roles"], name: "index_alchemy_users_on_alchemy_roles"
-  add_index "alchemy_users", ["email"], name: "index_alchemy_users_on_email", unique: true
-  add_index "alchemy_users", ["firstname"], name: "index_alchemy_users_on_firstname"
-  add_index "alchemy_users", ["lastname"], name: "index_alchemy_users_on_lastname"
-  add_index "alchemy_users", ["login"], name: "index_alchemy_users_on_login", unique: true
-  add_index "alchemy_users", ["reset_password_token"], name: "index_alchemy_users_on_reset_password_token", unique: true
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -682,6 +646,7 @@ ActiveRecord::Schema.define(version: 20151129155240) do
     t.string   "cvv_response_message"
   end
 
+  add_index "spree_payments", ["number"], name: "index_spree_payments_on_number"
   add_index "spree_payments", ["order_id"], name: "index_spree_payments_on_order_id"
   add_index "spree_payments", ["payment_method_id"], name: "index_spree_payments_on_payment_method_id"
   add_index "spree_payments", ["source_id", "source_type"], name: "index_spree_payments_on_source_id_and_source_type"

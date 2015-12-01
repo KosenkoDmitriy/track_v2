@@ -59,12 +59,9 @@ gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 
 # connecting a custom shop to the ShipStation
 gem 'spree_shipstation', github: 'KosenkoDmitriy/spree_shipstation', branch: '3-0-stable'
-
-# ALCHEMY
-gem 'alchemy_spree', github: 'magiclabs/alchemy_spree', branch: 'master' # '~> 1.0.0.beta' and alchemy_cms '~> 3.1'
-
 gem 'spree_minicart', github: 'KosenkoDmitriy/spree_minicart', branch: '3-0-stable'
 gem 'spree_active_shipping', github: 'spree/spree_active_shipping', branch: '3-0-stable'
 gem 'spree_asset_variant_options', github: 'KosenkoDmitriy/spree_asset_variant_options', branch: '3-0-stable'
 gem 'spree_affiliate', github: 'KosenkoDmitriy/spree_affiliate', branch: '3-0-stable'
 gem 'spree_chimpy', github: 'KosenkoDmitriy/spree_chimpy', branch: '3-0-stable'
+gem 'alchemy_spree', github: 'KosenkoDmitriy/alchemy_spree' # , branch: '3-0-v1' # '~> 1.0.0.beta' and alchemy_cms '~> 3.1'
