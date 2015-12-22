@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201133583) do
+ActiveRecord::Schema.define(version: 20151222114030) do
 
   create_table "alchemy_attachments", force: :cascade do |t|
     t.string   "name"
@@ -311,6 +311,8 @@ ActiveRecord::Schema.define(version: 20151201133583) do
     t.integer  "country_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "user_id"
+    t.datetime "deleted_at"
   end
 
   add_index "spree_addresses", ["country_id"], name: "index_spree_addresses_on_country_id"
@@ -1117,6 +1119,16 @@ ActiveRecord::Schema.define(version: 20151201133583) do
   add_index "spree_stock_transfers", ["destination_location_id"], name: "index_spree_stock_transfers_on_destination_location_id"
   add_index "spree_stock_transfers", ["number"], name: "index_spree_stock_transfers_on_number"
   add_index "spree_stock_transfers", ["source_location_id"], name: "index_spree_stock_transfers_on_source_location_id"
+
+  create_table "spree_store_credits", force: :cascade do |t|
+    t.integer  "user_id"
+    t.decimal  "amount",           precision: 8, scale: 2, default: 0.0, null: false
+    t.decimal  "remaining_amount", precision: 8, scale: 2, default: 0.0, null: false
+    t.string   "reason"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "preferences"
+  end
 
   create_table "spree_stores", force: :cascade do |t|
     t.string   "name"

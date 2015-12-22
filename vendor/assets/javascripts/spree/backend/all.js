@@ -11,3 +11,5 @@
 //= require_tree .
 //= require spree/backend/spree_asset_variant_options
 //= require spree/backend/spree_affiliate
+//= require spree/backend/spree_address_book
+//= require spree/backend/spree_store_credits
