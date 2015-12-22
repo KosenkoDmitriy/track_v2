@@ -6,7 +6,7 @@
 	<% call_to_action_text = element.ingredient(:call_to_action_text) %>
 	<% call_to_action_link = element.ingredient(:call_to_action_link) %>
 	<% call_to_action_label = element.ingredient(:call_to_action_label) %>
-	<% share_description = !@page.meta_description.empty? ? @page.meta_description : !@page.title.empty? ? @page.title : 'Running Deserves Better' %>
+	<% share_description = !@page.try(:meta_description).try(:empty?) ? @page.try(:meta_description) : !@page.try(:title).try(:empty?) ? @page.try(:title) : 'Running Deserves Better' %>
 	<div class="html_module calls-to-action">
 
 		<div class="call-to-action buy">
