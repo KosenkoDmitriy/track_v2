@@ -7,6 +7,15 @@ GIT
       spree (>= 3.0, < 4.0)
 
 GIT
+  remote: git://github.com/KosenkoDmitriy/spree_address_book.git
+  revision: a10d0a564b8670342840e745490a011d6c5155a2
+  branch: 3-0-stable
+  specs:
+    spree_address_book (3.0.4)
+      spree_auth_devise (~> 3.0.0)
+      spree_core (~> 3.0.4)
+
+GIT
   remote: git://github.com/KosenkoDmitriy/spree_affiliate.git
   revision: ee1448c77691b9544d621aea1a3b33a56fcb7feb
   branch: 3-0-stable
@@ -37,6 +46,14 @@ GIT
   branch: 3-0-stable
   specs:
     spree_shipstation (3.0.4)
+      spree_core (~> 3.0.4)
+
+GIT
+  remote: git://github.com/KosenkoDmitriy/spree_store_credits.git
+  revision: 6b4413d8dfbc08c73a3fc176721bd658ac0d5228
+  branch: 3-0-stable
+  specs:
+    spree_store_credits (3.0.4)
       spree_core (~> 3.0.4)
 
 GIT
@@ -228,6 +245,9 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bourbon (4.2.6)
+      sass (~> 3.4)
+      thor (~> 0.19)
     brakeman (3.1.2)
       erubis (~> 2.6)
       fastercsv (~> 1.5)
@@ -316,6 +336,8 @@ GEM
       terminal-table
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    google-tag-manager-rails (0.1.3)
+      rails (>= 3.0.0)
     haml (4.0.7)
       tilt
     highline (1.6.21)
@@ -361,6 +383,9 @@ GEM
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    neat (1.7.2)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     non-stupid-digest-assets (1.0.5)
@@ -548,10 +573,14 @@ PLATFORMS
 
 DEPENDENCIES
   alchemy_spree!
+  bourbon
   byebug
   coffee-rails (~> 4.1.0)
+  google-tag-manager-rails
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-ui-rails
+  neat
   pronto
   pronto-brakeman
   pronto-jshint
@@ -563,12 +592,14 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spree!
   spree_active_shipping!
+  spree_address_book!
   spree_affiliate!
   spree_asset_variant_options!
   spree_auth_devise!
   spree_chimpy!
   spree_gateway!
   spree_shipstation!
+  spree_store_credits!
   spring
   sqlite3
   therubyracer

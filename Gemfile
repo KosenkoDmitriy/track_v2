@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -65,3 +67,10 @@ gem 'spree_asset_variant_options', github: 'KosenkoDmitriy/spree_asset_variant_o
 gem 'spree_affiliate', github: 'KosenkoDmitriy/spree_affiliate', branch: '3-0-stable'
 gem 'spree_chimpy', github: 'KosenkoDmitriy/spree_chimpy', branch: '3-0-stable'
 gem 'alchemy_spree', github: 'KosenkoDmitriy/alchemy_spree' # , branch: '3-0-v1' # '~> 1.0.0.beta' and alchemy_cms '~> 3.1'
+
+gem 'spree_store_credits', github: 'KosenkoDmitriy/spree_store_credits', branch: '3-0-stable'
+gem 'spree_address_book', github: 'KosenkoDmitriy/spree_address_book', branch: '3-0-stable'
+
+gem 'bourbon'
+gem 'neat'
+gem 'google-tag-manager-rails'

@@ -22,7 +22,7 @@ auto_logout_time: 30
 #   redirect_index            [Boolean]   # You can disable the redirect to first child page for not public pages.
 #   redirect_to_public_child  [Boolean]   # Alchemy redirects to the first public child page found, if a page is not visible.
 #
-redirect_index: true
+redirect_index: false
 redirect_to_public_child: true
 
 # === Page caching
@@ -31,7 +31,7 @@ redirect_to_public_child: true
 #
 # Hint: You can enable/disable page caching for single Alchemy::PageLayouts in the page_layout.yml file.
 #
-cache_pages: true
+cache_pages: false
 
 # === Sitemap
 #
@@ -186,4 +186,3 @@ open_external_links_in_new_tab: true
 format_matchers:
   email: !ruby/regexp '/\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/'
   url: !ruby/regexp '/\A[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix'
-  link_url: !ruby/regexp '/^(mailto:|\/|[a-z]+:\/\/)/'
