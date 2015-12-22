@@ -4,6 +4,7 @@ AllCops:
     - db/**/*
     - bin/**/*
     - app/assets/**/*
+    - app/assets/javascripts/*
 Documentation:
   Enabled: false
 

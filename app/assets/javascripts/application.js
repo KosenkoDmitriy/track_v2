@@ -30,3 +30,4 @@
 //= require jquery.waypoints.min
 //= require_tree ./page_layouts
 //= require spree/frontend/spree_address_book
+//= require elements/product_module

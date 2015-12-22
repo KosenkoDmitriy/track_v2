@@ -1,22 +1,39 @@
 <%- cache(element) do -%>
-  <%= element_view_for(element) do |el| -%>
-    <div class="event_name">
-      <%= el.render :event_name %>
+
+  <% align  = element.ingredient(:event_align)%>
+  <% image  = element.ingredient(:event_image) %>
+  <% title  = element.ingredient(:event_name) %>
+  <% text   = element.ingredient(:event_text) %>
+  <% where  = element.ingredient(:event_where) %>
+  <% date   = element.ingredient(:event_when) %>
+
+  <div class="event-row <%= align %>">
+    <div class="event-image golden_61">
+      <% if align == 'image-right'%>
+        <div class="arrow-left"></div>
+        <%= image_tag show_alchemy_picture_path(image) %>
+      <% else%>  
+        <%= image_tag show_alchemy_picture_path(image) %>
+        <div class="arrow-right"></div>
+      <% end %>
+
     </div>
-    <div class="event_image">
-      <%= el.render :event_image %>
+    <div class="event-info golden_38">
+
+      <div class="event_name superheader">
+      <%= title %>
     </div>
-    <div class="event_text">
-      <%= el.render :event_text %>
+    <div class="event-text">
+      <%= text.html_safe %>
     </div>
-    <div class="event_where">
-      <%= el.render :event_where %>
+    <div class="event-when">
+      <span>When </span>&mdash; <%= date %>
     </div>
-    <div class="event_when">
-      <%= el.render :event_when %>
+    <div class="event-where">
+      <span>Where </span>&mdash; <%= where %>
     </div>
-    <div class="event_align">
-      <%= el.render :event_align %>
-    </div>
-  <%- end -%>
+ 
+  </div>
+</div>
+
 <%- end -%>

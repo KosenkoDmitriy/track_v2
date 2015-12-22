@@ -1,22 +1,32 @@
 <%- cache(element) do -%>
   <%= element_view_for(element) do |el| -%>
-    <div class="background_color">
-      <%= el.render :background_color %>
+    <% superheader = el.ingredient(:superheader) %>
+    <% stamp = el.ingredient(:stamp_image) %>
+    <% pageLink = el.ingredient(:page_link)%>
+
+
+  <% if @page.page_layout == 'index' && pageLink  %>
+    <a href="<%= pageLink %>">
+  <%end%>
+
+    <div class="bg-color <%=el.render :background_color %>">
+      
+      <div class="home-text <%= el.render :text_color %>">
+        <% if superheader %> 
+          <div class="superheader"><%= el.render :superheader %></div>
+        <%end %>
+        <div class="big-text"><%= el.render :text %></div>
+      </div>
+
+      <% if stamp %>
+      <div class="stamp-image">
+        <%= image_tag show_alchemy_picture_path(stamp,  :format => (stamp.try(:suffix).to_s == 'png' ? 'png' : 'jpg')) %>
+      </div>
+      <% end %>
+
     </div>
-    <div class="superheader">
-      <%= el.render :superheader %>
-    </div>
-    <div class="text">
-      <%= el.render :text %>
-    </div>
-    <div class="text_color">
-      <%= el.render :text_color %>
-    </div>
-    <div class="page_link">
-      <%= el.render :page_link %>
-    </div>
-    <div class="stamp_image">
-      <%= el.render :stamp_image %>
-    </div>
+  <% if @page.page_layout == 'index' && pageLink  %>
+  </a>
+  <%end%>
   <%- end -%>
 <%- end -%>

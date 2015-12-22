@@ -1,25 +1,17 @@
-<%- cache(element) do -%>
-  <%= element_view_for(element) do |el| -%>
-    <div class="headline">
-      <%= el.render :headline %>
-    </div>
-    <div class="text_color">
-      <%= el.render :text_color %>
-    </div>
-    <div class="logo_image">
-      <%= el.render :logo_image %>
-    </div>
-    <div class="background_color">
-      <%= el.render :background_color %>
-    </div>
-    <div class="background_image">
-      <%= el.render :background_image %>
-    </div>
-    <div class="mobile_image">
-      <%= el.render :mobile_image %>
-    </div>
-    <div class="overlay?">
-      <%= el.render :overlay? %>
-    </div>
-  <%- end -%>
+<%= element_view_for(element) do |el| -%>
+  <% color 		= el.ingredient(:text_color) %>
+  <% bgimage  = el.essence(:background_image)%>
+  <% mobile_image 	= el.essence(:mobile_image)%>
+  <% bgcolor 	= element.ingredient(:background_color)%>
+  <% headline = el.ingredient(:headline) %>
+  <% height   = el.ingredient(:module_height)%>
+    <div class="height-wrapper" <%if !height.blank?%> style= "height: <%=height%>px" <%end %>>
+      
+      <div class="bg-color <% if bgcolor %><%= bgcolor %><% end %>" style="background: url(<%= image_for_platform(el).picture_url %>) no-repeat center center; background-size: cover; <%unless height.blank?%>height: <%=height%>px;<% end %>">
+
+        <%if !headline.blank? %>
+          <h2 class="hero-headline <%=color%>"><%= headline %></h2>
+        <% end %>
+      </div>
 <%- end -%>
+

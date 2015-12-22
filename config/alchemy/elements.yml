@@ -54,7 +54,6 @@
 
 - name: home_hero
   unique: true
-  cache: false
   contents:
   - name: headline
     type: EssenceRichtext
@@ -226,7 +225,6 @@
     type: EssenceBoolean
 
 - name: hero_module
-  cache: false
   unique: true
   contents:
   - name: headline
@@ -265,7 +263,6 @@
     type: EssenceBoolean
 
 - name: jumbo_product_module
-  cache: false
   contents:
   - name: page_link
     type: EssenceLink
@@ -298,7 +295,6 @@
       deletable: true
 
 - name: background_image_module
-  cache: false
   contents:
   - name: background_image
     type: EssencePicture
