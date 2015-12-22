@@ -1,0 +1,31 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <div class="superheader">
+      <%= el.render :superheader %>
+    </div>
+    <div class="headline">
+      <%= el.render :headline %>
+    </div>
+    <div class="text">
+      <%= el.render :text %>
+    </div>
+    <div class="background_color">
+      <%= el.render :background_color %>
+    </div>
+    <div class="text_alignment">
+      <%= el.render :text_alignment %>
+    </div>
+    <div class="text_color">
+      <%= el.render :text_color %>
+    </div>
+    <div class="module_height">
+      <%= el.render :module_height %>
+    </div>
+    <div class="page_link">
+      <%= el.render :page_link %>
+    </div>
+    <%- element.contents.where(name: ['bullet', 'stamp_image']).each do |content| -%>
+      <%= render_essence_view(content) %>
+    <%- end -%>
+  <%- end -%>
+<%- end -%>

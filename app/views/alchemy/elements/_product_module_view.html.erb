@@ -1,0 +1,16 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <div class="spree_product">
+      <%= el.render :spree_product %>
+    </div>
+    <div class="backorder_info">
+      <%= el.render :backorder_info %>
+    </div>
+    <div class="show_facebook_share">
+      <%= el.render :show_facebook_share %>
+    </div>
+    <div class="show_twitter_share">
+      <%= el.render :show_twitter_share %>
+    </div>
+  <%- end -%>
+<%- end -%>

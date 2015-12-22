@@ -1,0 +1,22 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <div class="background_color">
+      <%= el.render :background_color %>
+    </div>
+    <div class="image">
+      <%= el.render :image %>
+    </div>
+    <div class="superheader">
+      <%= el.render :superheader %>
+    </div>
+    <div class="text">
+      <%= el.render :text %>
+    </div>
+    <div class="text_color">
+      <%= el.render :text_color %>
+    </div>
+    <div class="page_link">
+      <%= el.render :page_link %>
+    </div>
+  <%- end -%>
+<%- end -%>

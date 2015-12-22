@@ -1,0 +1,10 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <div class="text">
+      <%= el.render :text %>
+    </div>
+    <div class="stamp_image">
+      <%= el.render :stamp_image %>
+    </div>
+  <%- end -%>
+<%- end -%>

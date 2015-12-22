@@ -1,0 +1,34 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <div class="headline">
+      <%= el.render :headline %>
+    </div>
+    <div class="text_color">
+      <%= el.render :text_color %>
+    </div>
+    <div class="background_image">
+      <%= el.render :background_image %>
+    </div>
+    <div class="mobile_image">
+      <%= el.render :mobile_image %>
+    </div>
+    <div class="overlay?">
+      <%= el.render :overlay? %>
+    </div>
+    <div class="background_color">
+      <%= el.render :background_color %>
+    </div>
+    <div class="video">
+      <%= el.render :video %>
+    </div>
+    <div class="module_height">
+      <%= el.render :module_height %>
+    </div>
+    <div class="page_link">
+      <%= el.render :page_link %>
+    </div>
+    <div class="image_title">
+      <%= el.render :image_title %>
+    </div>
+  <%- end -%>
+<%- end -%>

@@ -1,0 +1,34 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <div class="background_color">
+      <%= el.render :background_color %>
+    </div>
+    <div class="headline">
+      <%= el.render :headline %>
+    </div>
+    <div class="text_above">
+      <%= el.render :text_above %>
+    </div>
+    <div class="text_below">
+      <%= el.render :text_below %>
+    </div>
+    <div class="text_alignment">
+      <%= el.render :text_alignment %>
+    </div>
+    <div class="text_color">
+      <%= el.render :text_color %>
+    </div>
+    <div class="module_height">
+      <%= el.render :module_height %>
+    </div>
+    <div class="stamp_image">
+      <%= el.render :stamp_image %>
+    </div>
+    <div class="google_analytics_event_label">
+      <%= el.render :google_analytics_event_label %>
+    </div>
+    <div class="mailchimp_list_id">
+      <%= el.render :mailchimp_list_id %>
+    </div>
+  <%- end -%>
+<%- end -%>

@@ -1,0 +1,8 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <%= el.render :page_link %>
+    <%- element.contents.where(name: ['image']).each do |content| -%>
+      <%= render_essence_view(content) %>
+    <%- end -%>
+  <%- end -%>
+<%- end -%>

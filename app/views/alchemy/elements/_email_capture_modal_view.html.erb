@@ -1,0 +1,22 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <div class="style">
+      <%= el.render :style %>
+    </div>
+    <div class="background_color">
+      <%= el.render :background_color %>
+    </div>
+    <div class="headline">
+      <%= el.render :headline %>
+    </div>
+    <div class="text">
+      <%= el.render :text %>
+    </div>
+    <div class="google_analytics_event_label">
+      <%= el.render :google_analytics_event_label %>
+    </div>
+    <div class="mailchimp_list_id">
+      <%= el.render :mailchimp_list_id %>
+    </div>
+  <%- end -%>
+<%- end -%>

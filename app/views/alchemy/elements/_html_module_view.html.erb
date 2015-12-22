@@ -1,0 +1,25 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <div class="html">
+      <%= el.render :html %>
+    </div>
+    <div class="call_to_action_text">
+      <%= el.render :call_to_action_text %>
+    </div>
+    <div class="call_to_action_label">
+      <%= el.render :call_to_action_label %>
+    </div>
+    <div class="call_to_action_link">
+      <%= el.render :call_to_action_link %>
+    </div>
+    <div class="share_text">
+      <%= el.render :share_text %>
+    </div>
+    <div class="show_facebook_share">
+      <%= el.render :show_facebook_share %>
+    </div>
+    <div class="show_twitter_share">
+      <%= el.render :show_twitter_share %>
+    </div>
+  <%- end -%>
+<%- end -%>

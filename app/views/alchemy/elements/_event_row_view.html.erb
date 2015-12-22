@@ -1,0 +1,22 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <div class="event_name">
+      <%= el.render :event_name %>
+    </div>
+    <div class="event_image">
+      <%= el.render :event_image %>
+    </div>
+    <div class="event_text">
+      <%= el.render :event_text %>
+    </div>
+    <div class="event_where">
+      <%= el.render :event_where %>
+    </div>
+    <div class="event_when">
+      <%= el.render :event_when %>
+    </div>
+    <div class="event_align">
+      <%= el.render :event_align %>
+    </div>
+  <%- end -%>
+<%- end -%>

@@ -1,0 +1,7 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <%- element.contents.where(name: ['product', 'image', 'copy']).each do |content| -%>
+      <%= render_essence_view(content) %>
+    <%- end -%>
+  <%- end -%>
+<%- end -%>
