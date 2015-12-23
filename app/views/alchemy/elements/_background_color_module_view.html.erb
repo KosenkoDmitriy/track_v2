@@ -1,6 +1,6 @@
 
 <%- cache(element) do -%>
-<% background = element.ingredient('background_color') %>
+<% background = element.ingredient('background_color') || '' %>
   <%= element_view_for(element, :class => background + " bg-color background_color_module") do |el| -%>
 
   <% height = element.ingredient(:module_height)%>
