@@ -4,7 +4,7 @@ Alchemy::EssencePicture.class_eval do
     def picture_url(options = {})
       return if picture.nil?
        params = picture_params(options)
-       # return request.host + picture.image_file_uid
+       # return asset_path picture.image_file_uid
        # return picture.image_file.remote_url(host: "#{CLOUDFRONT_CONFIG['image_domain']}.#{CLOUDFRONT_CONFIG['host']}") if params[:crop].nil?
        routes.show_picture_path(params)
     end

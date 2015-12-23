@@ -1,7 +1,5 @@
 <%- cache(element) do -%>
-  <%= element_view_for(element, :class => 'essay-body', :tag => :section) do |el| -%>
-
-            <%= el.render :paragraph %>
-
-  <%- end -%>
+    <%= element_view_for(element, :class => 'essay-body', :tag => :section) do |el| -%>
+        <%= el.render :paragraph %>
+    <%- end -%>
 <%- end -%>
