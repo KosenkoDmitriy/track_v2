@@ -1,5 +1,5 @@
 <%- cache(element) do -%>
-<% background = element.ingredient('background_color') %>
+<% background = element.ingredient('background_color') || '' %>
   <%= element_view_for(element, :class => background + " bg-color quote-module") do |el| -%>
     <% pageLink = el.ingredient(:page_link)%>  
     <% quote_text_size = el.ingredient(:quote_text_size)%>  
