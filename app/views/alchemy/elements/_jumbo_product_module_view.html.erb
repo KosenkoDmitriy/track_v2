@@ -10,15 +10,15 @@
   <%end%>
 
   <div class="height-wrapper" <%if !height.blank?%> style= "height: <%=height%>px" <%end %>>
-    <%# if (is_mobile_device? || is_tablet_device?) && mobile #%>
-      <!--<div class="jumbo-image jumbo-mobile">-->
-      <!--<%= image_tag show_alchemy_picture_path(mobile,  :format => (mobile.try(:suffix).to_s == 'png' ? 'png' : 'jpg')) %>-->
-      <!--</div>-->
-    <%#elsif image#%>
+    <% if (is_mobile_device? || is_tablet_device?) && mobile %>
+      <div class="jumbo-image jumbo-mobile">
+      <%= image_tag show_alchemy_picture_path(mobile,  :format => (mobile.try(:suffix).to_s == 'png' ? 'png' : 'jpg')) %>
+      </div>
+    <% elsif image %>
       <div class="jumbo-image">
       <%= image_tag show_alchemy_picture_path(image,  :format => (image.try(:suffix).to_s == 'png' ? 'png' : 'jpg')) %>
       </div>
-    <%#end#%>
+    <% end %>
 
 
     <div class="module-content jumbo-text <%= el.render :text_alignment %> <%= el.render :text_color %>">

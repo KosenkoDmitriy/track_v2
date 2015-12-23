@@ -17,7 +17,7 @@
     <div title="<%= title %>" class="bg-color <% if bgcolor %><%= bgcolor %><% end %>" style="background: url(<%= image_for_platform(el).picture_url %>) no-repeat center center; background-size: cover; <%unless height.blank?%>height: <%=height%>px;<% end %>">
 
       <% unless headline.blank? %>
-          <h2 class="hero-headline <%= color %>"><%= headline.strip_html_tags %></h2>
+          <h2 class="hero-headline <%= color %>"><%= raw(strip_tags(headline).html_safe) %></h2>
       <% end %>
     </div>
 

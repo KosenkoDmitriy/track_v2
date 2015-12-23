@@ -72,3 +72,5 @@ gem 'spree_address_book', github: 'KosenkoDmitriy/spree_address_book', branch: '
 
 gem 'bourbon'
 gem 'neat'
+
+gem 'mobile-fu' # automatically detect mobile requests from mobile devices
