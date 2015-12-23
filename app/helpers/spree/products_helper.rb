@@ -1,6 +1,5 @@
 module Spree
   module ProductsHelper
-
     def product_path(product)
       alchemy.root_url + "products/#{product.slug}"
     end
@@ -10,8 +9,8 @@ module Spree
       "#{current_currency}/spree/products/all-#{params[:page]}-#{max_updated_at}"
     end
 
-    def line_item_description_text (var)
-      ""
+    def line_item_description_text(_var)
+      ''
     end
   end
 end

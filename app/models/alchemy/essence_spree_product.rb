@@ -1,6 +1,6 @@
 module Alchemy
   class EssenceSpreeProduct < ActiveRecord::Base
-    belongs_to :product, -> { readonly }, class_name: "Spree::Product", foreign_key: 'spree_product_id'
+    belongs_to :product, -> { readonly }, class_name: 'Spree::Product', foreign_key: 'spree_product_id'
 
     acts_as_essence(
       ingredient_column: 'spree_product_id',

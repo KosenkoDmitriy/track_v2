@@ -10,17 +10,17 @@ class Spree::Calculator::TieredFlatRateShipping < Spree::ShippingCalculator
   preference :heavy_cost, :decimal, default: -1
 
   def self.description
-    return "Tiered Flat Rate"
+    'Tiered Flat Rate'
   end
-  
-  def compute(object=nil)
+
+  def compute(_object = nil)
     case @order_weight_category
     when OrderWeightCategory::Heavy
-      return self.preferred_heavy_cost
+      return preferred_heavy_cost
     when OrderWeightCategory::Light
-      return self.preferred_light_cost
+      return preferred_light_cost
     else
-      return self.preferred_default_cost
+      return preferred_default_cost
     end
   end
 
@@ -29,43 +29,37 @@ class Spree::Calculator::TieredFlatRateShipping < Spree::ShippingCalculator
 
     case @order_weight_category
     when OrderWeightCategory::Heavy
-      return self.preferred_heavy_cost != -1
+      return preferred_heavy_cost != -1
     when OrderWeightCategory::Light
-      return self.preferred_light_cost != -1
+      return preferred_light_cost != -1
     else
-      return self.preferred_default_cost != -1
+      return preferred_default_cost != -1
     end
   end
 
-  def isHeavy?(product) 
-    return !product.properties.select {|property| property.name == "heavy"}[0].nil?
+  def isHeavy?(product)
+    !product.properties.select { |property| property.name == 'heavy' }[0].nil?
   end
 
-  def isLight?(product) 
-    return !product.properties.select {|property| property.name == "light"}[0].nil?
+  def isLight?(product)
+    !product.properties.select { |property| property.name == 'light' }[0].nil?
   end
 
-  def calculateOrderWeightCategory(order) 
+  def calculateOrderWeightCategory(order)
     is_light_order = true # All products must be light.
     is_heavy_order = false # Only 1 has to be heavy.
 
     order.line_items.each do |line_item|
       product = line_item.product
 
-      unless isLight?(product)
-        is_light_order = false
-      end
+      is_light_order = false unless isLight?(product)
 
-      if isHeavy?(product)
-        return OrderWeightCategory::Heavy
-      end
+      return OrderWeightCategory::Heavy if isHeavy?(product)
     end
 
-    if is_light_order
-      return OrderWeightCategory::Light
-    end
+    return OrderWeightCategory::Light if is_light_order
 
     # Wasn't light or heavy return default
-    return OrderWeightCategory::Default
+    OrderWeightCategory::Default
   end
 end

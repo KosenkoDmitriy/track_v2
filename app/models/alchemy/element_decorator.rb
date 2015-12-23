@@ -20,7 +20,3 @@
 Alchemy::Element.class_eval do
   has_many :contents, -> { order(:created_at) }, dependent: :destroy
 end
-
-
-    
-   

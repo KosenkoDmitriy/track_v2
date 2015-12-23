@@ -12,7 +12,7 @@ module Spree
         css_classes = []
         current_index = states.index(@order.state)
         state_index = states.index(state)
-        state_number = state_index+1
+        state_number = state_index + 1
 
         if state_index < current_index
           css_classes << 'completed'
@@ -27,9 +27,8 @@ module Spree
 
         # It'd be nice to have separate classes but combining them with a dash helps out for IE6 which only sees the last class
         content_tag :li, class: css_classes.join('-') do
-          content_tag('span', state_number, class: 'number') + content_tag('span', text, class: 'state') 
+          content_tag('span', state_number, class: 'number') + content_tag('span', text, class: 'state')
         end
-
       end
       content_tag('ol', raw(items.join("\n")), class: 'checkout-breadcrumbs progress-steps', id: "checkout-step-#{@order.state}")
     end

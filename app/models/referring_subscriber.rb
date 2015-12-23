@@ -6,7 +6,7 @@ class ReferringSubscriber < ReferralSubscriber
   def call
     return if email.nil? || email.empty?
     client.subscribe(id: list_id, email: { email: email },
-                     merge_vars: { :WOMENS_REFERRER => 'yes' },
+                     merge_vars: { WOMENS_REFERRER: 'yes' },
                      double_optin: false, update_existing: true)
   end
 
