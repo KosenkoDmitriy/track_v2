@@ -7,6 +7,6 @@ Spree::User.class_eval do
 
   def send_welcome_email
     # UserMailer.welcome(self.id).deliver
-  rescue
+    # rescue
   end
 end

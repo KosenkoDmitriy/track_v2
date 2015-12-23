@@ -8,5 +8,5 @@ Spree::Shipment.class_eval do
                        email: order.email,
                        name: "#{order.bill_address.firstname} #{order.bill_address.lastname}"
                      }])
- end
+  end
 end
