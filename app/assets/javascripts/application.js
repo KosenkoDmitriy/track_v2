@@ -18,6 +18,7 @@
 //= require jquery.velocity.min
 //= require jquery.withinViewport
 //= require jquery.validate.min
+//= require pageScroll.jquery
 //= require withinViewport
 //= require spree/frontend
 //= require jquery.fittext
