@@ -54,7 +54,8 @@ group :development do
   gem 'spring'
 end
 
-gem 'spree', github: 'spree/spree', branch: '3-0-stable'
+gem 'spree', github: 'KosenkoDmitriy/spree', branch: '3-0-stable'
+# gem 'spree', path: '../spree' # local repo
 gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable' # stripe included (details here www.stripe.com and in readme)
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 
