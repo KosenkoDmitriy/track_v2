@@ -19,7 +19,32 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
+integration:
+  adapter: postgresql
+  database:
+  host:
+  username:
+  password:
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+staging:
+  adapter: postgresql
+  database:
+  host:
+  username:
+  password:
+  encoding: unicode
+  pool: 5
+  timeout: 5000
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database:
+  host:
+  username:
+  password:
+  encoding: unicode
+  pool: 5
+  timeout: 5000

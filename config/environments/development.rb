@@ -16,6 +16,10 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+  # Enable Rack::Cache to put a simple HTTP cache in front of your application
+  # Add `rack-cache` to your Gemfile before enabling this.
+  # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
+  # config.action_dispatch.rack_cache = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -26,7 +30,11 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
+  # Do not minify code for debugging purposes.
   config.assets.debug = true
+
+  # Set to :debug to see everything in the log.
+  config.log_level = :debug
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
@@ -36,6 +44,23 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
+  MANDRILL_APIKEY = 'zv4DH8RAhOzqC0dkCCG8_w'
+
+  # Next line is needed for mailer to render templates properly
+  config.mandrill_mailer.default_url_options = {:host => '0.0.0.0:3000'}
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'tracksmith.com',
+    user_name: '',
+    password: '',
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

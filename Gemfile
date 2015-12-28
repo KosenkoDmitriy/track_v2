@@ -74,6 +74,8 @@ gem 'mobile-fu', '~> 1.3.1' # automatically detect mobile requests from mobile d
 
 gem 'google-tag-manager-rails', '~> 0.1.3'
 
+gem 'rack-cache', '~> 1.5.1'
+
 # mailers
 gem 'mandrill-api', '~> 1.0.9'
 gem 'mandrill_mailer', '~> 0.4.6'

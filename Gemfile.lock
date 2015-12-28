@@ -634,6 +634,8 @@ GEM
     rabl (0.11.7)
       activesupport (>= 2.3.14)
     rack (1.6.4)
+    rack-cache (1.5.1)
+      rack (>= 0.4)
     rack-mobile-detect (0.4.0)
       rack
     rack-test (0.6.3)
@@ -860,6 +862,7 @@ DEPENDENCIES
   pronto-rails_schema
   pronto-rubocop
   pry-byebug
+  rack-cache
   rails (= 4.2.4)
   rspec-rails (~> 3.2)
   rubocop

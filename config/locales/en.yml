@@ -21,3 +21,43 @@
 
 en:
   hello: "Hello world"
+  spree:
+    my_account: Account
+    cart: Cart
+    login_as_existing: Login
+    new_customer: New Account
+    instructions_to_reset_password: "Enter your email below, and we’ll send you a reset link."
+    registration: "Sign In"
+    order_state:
+      address: address
+      awaiting_return: awaiting return
+      canceled: canceled
+      cart: cart
+      considered_risky: considered risky
+      complete: complete
+      confirm: confirmation
+      delivery: shipping
+      payment: payment
+      resumed: resumed
+      returned: returned
+
+  referral_mailer:
+    new:
+      subject: "Your friend wants you to meet Tracksmith"
+      flash: "Rerrals on their way. Friend's happiness increasing wildly"
+    subscribe:
+      flash: "Thank you, we will be in touch soon."
+    rewards:
+      subject: "Thanks For Inviting Your Friends"
+
+  user_mailer:
+    welcome:
+      subject: "Welcome to Tracksmith!"
+    order_confirmed:
+      subject: "Your order has been confirmed!"
+    order_shipped:
+      subject: "Your order has shipped!"
+    store_credits: Store Credit
+
+  flash_notice:
+    sign_in_content: "To access meter, login or create an account"
