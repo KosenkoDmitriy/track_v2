@@ -11,8 +11,8 @@ require 'alchemy/spree/spree_user_decorator'
 # Alchemy::BaseController.send :include, Spree::Core::ControllerHelpers::Common
 # Alchemy::BaseController.send :include, Spree::Core::ControllerHelpers::Store
 
-Alchemy.login_path = :spree_login_path
-Alchemy.logout_path = :spree_logout_path
+Alchemy.login_path = :spree_login
+Alchemy.logout_path = :spree_logout
 
 # Custom 404 renderer
 Alchemy::PagesController.class_eval do
