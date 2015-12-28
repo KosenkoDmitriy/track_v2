@@ -64,7 +64,7 @@ Rails.application.configure do
   MANDRILL_APIKEY = ''
 
   # Next line is needed for mailer to render templates properly
-  config.mandrill_mailer.default_url_options = {:host => 'www.integration-tracksmith.mobispoke.com/'}
+  config.mandrill_mailer.default_url_options = { host: 'www.integration-tracksmith.mobispoke.com/' }
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
@@ -78,5 +78,4 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auto: true
   }
-
 end

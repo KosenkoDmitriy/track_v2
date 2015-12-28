@@ -5,21 +5,21 @@
 # In order to initialize a setting do:
 # config.setting_name = 'new value'
 Spree.config do |config|
-  # Example:
+  # Uncomment to override the default site name.
+
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
 
-  # Uncomment to override the default site name.
-  config.site_name = 'Tracksmith'
+  # config.display_currency = false
+  # config.allow_ssl_in_staging = false
+  # config.allow_ssl_in_production = true
+  # config.override_actionmailer_config = false
+
   config.admin_interface_logo = 'logo/logo.png'
   config.logo = 'logo/logo.png'
   config.always_include_confirm_step = true
-  config.display_currency = false
   config.allow_guest_checkout = false
   config.track_inventory_levels = true
-  config.allow_ssl_in_staging = false
-  config.allow_ssl_in_production = true
-  config.override_actionmailer_config = false
 
   if Rails.env.production?
     config.shipstation_username = ''
@@ -41,9 +41,12 @@ Spree.config do |config|
   # if you prefer to send notifications via shipstation
   config.send_shipped_email = false
 
-  config.spree.calculators.shipping_methods << Spree::Calculator::TieredFlatRateShipping
 end
 
+config = Rails.application.config
+config.spree.calculators.shipping_methods << Spree::Calculator::TieredFlatRateShipping
+
 Spree::Auth::Config[:registration_step] = true
+Spree::Store.default.update_attribute(:name, 'Tracksmith')
 
 Spree.user_class = 'Spree::User'

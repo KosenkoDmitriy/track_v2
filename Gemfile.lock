@@ -862,7 +862,7 @@ DEPENDENCIES
   pronto-rails_schema
   pronto-rubocop
   pry-byebug
-  rack-cache
+  rack-cache (~> 1.5.1)
   rails (= 4.2.4)
   rspec-rails (~> 3.2)
   rubocop

@@ -47,7 +47,7 @@ Rails.application.configure do
   MANDRILL_APIKEY = 'zv4DH8RAhOzqC0dkCCG8_w'
 
   # Next line is needed for mailer to render templates properly
-  config.mandrill_mailer.default_url_options = {:host => '0.0.0.0:3000'}
+  config.mandrill_mailer.default_url_options = { host: '0.0.0.0:3000' }
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
