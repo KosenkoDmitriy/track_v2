@@ -10,10 +10,12 @@ class ReferralsMailer < MandrillMailer::TemplateMailer
                   vars: {
                     'REFERRER' => referrer
                   },
-                  recipient_vars: recipients.compact.map { |recipient| { recipient[:email] =>
-                                                        { 'REFERRAL_URL' =>
-                                                           build_url(recipient[:email],
-                                                                    referrer) } } }
+                  recipient_vars: recipients.compact.map { |recipient|
+                    { recipient[:email] =>
+                                        { 'REFERRAL_URL' =>
+                                           build_url(recipient[:email],
+                                                     referrer) } }
+                  }
   end
 
   def build_url(email, referrer)

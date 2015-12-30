@@ -3,7 +3,7 @@ class UserMailer < MandrillMailer::TemplateMailer
 
   def welcome(user_id)
     user = Spree::User.find user_id
-    
+
     mandrill_mail template: 'tracksmith_welcome',
                   subject: I18n.t('user_mailer.welcome.subject'),
                   to: { email: "#{user.email}" },
@@ -12,7 +12,7 @@ class UserMailer < MandrillMailer::TemplateMailer
 
   def order_confirmed(user_id, order_id)
     user = Spree::User.find user_id
-    order = Spree::Order.find  order_id
+    order = Spree::Order.find order_id
     mandrill_mail template: 'tracksmith_order_confirmed',
                   subject: I18n.t('user_mailer.order_confirmed.subject'),
                   to: { email: "#{user.email}" },
@@ -33,5 +33,4 @@ class UserMailer < MandrillMailer::TemplateMailer
                     'TRACKING_NUMBER' => shipment.tracking
                   }
   end
-
 end

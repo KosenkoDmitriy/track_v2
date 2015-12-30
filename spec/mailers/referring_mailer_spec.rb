@@ -4,7 +4,7 @@ RSpec.describe ReferringMailer do
   let(:referrer) { 'referrer@gmail.com' }
 
   before :each do
-    MandrillMailer::deliveries.clear
+    MandrillMailer.deliveries.clear
   end
 
   subject { ReferringMailer.reward(referrer) }

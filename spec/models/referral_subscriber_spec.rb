@@ -7,8 +7,10 @@ RSpec.describe ReferralSubscriber do
 
   let(:email) { Faker::Internet.email }
 
-  subject { ReferralSubscriber.new(Base64.urlsafe_encode64(email),
-                                   Base64.urlsafe_encode64(user.email)) }
+  subject do
+    ReferralSubscriber.new(Base64.urlsafe_encode64(email),
+                           Base64.urlsafe_encode64(user.email))
+  end
 
   before :each do
     allow(subject).to receive(:client).and_return(client)

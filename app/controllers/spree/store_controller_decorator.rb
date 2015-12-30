@@ -11,7 +11,7 @@ Spree::StoreController.class_eval do
           prelaunch_coupon[:applied] = 't'
           prelaunch_coupon[:order_id] = @order[:id]
           prelaunch_coupon.save!
-        elsif prelaunch_coupon[:applied] == 't' and prelaunch_coupon[:order_id] == @order[:id]
+        elsif prelaunch_coupon[:applied] == 't' && prelaunch_coupon[:order_id] == @order[:id]
           params[:order][:coupon_code] = "prelaunch-#{prelaunch_coupon[:level]}"
         end
       end
@@ -28,5 +28,4 @@ Spree::StoreController.class_eval do
       end
     end
   end
-
 end

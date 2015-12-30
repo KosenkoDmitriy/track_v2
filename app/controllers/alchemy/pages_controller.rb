@@ -6,11 +6,11 @@ module Alchemy
     # Anyone with a better idea please provide a patch.
     include Alchemy::BaseHelper
 
-    rescue_from ActionController::RoutingError, :with => :render_404
+    rescue_from ActionController::RoutingError, with: :render_404
 
-    before_filter :enforce_primary_host_for_site
-    before_filter :render_page_or_redirect, :only => [:show]
-    before_filter :load_page
+    before_action :enforce_primary_host_for_site
+    before_action :render_page_or_redirect, only: [:show]
+    before_action :load_page
     # authorize_resource only: 'show'
 
     # Showing page from params[:urlname]
@@ -23,7 +23,7 @@ module Alchemy
             if @page.contains_feed?
               render action: 'show', layout: false, handlers: [:builder]
             else
-              render xml: {error: 'Not found'}, status: 404
+              render xml: { error: 'Not found' }, status: 404
             end
           end
           format.json { render json: @page }
@@ -45,24 +45,24 @@ module Alchemy
     #
     def load_page
       @page ||= if params[:urlname].present?
-        # Load by urlname. If a language is specified in the request parameters,
-        # scope pages to it to make sure we can raise a 404 if the urlname
-        # is not available in that language.
-        Page.contentpages.where(
-          urlname:       params[:urlname],
-          language_id:   Language.current.id,
-          language_code: params[:lang] || Language.current.code
-        ).first
-      else
-        # No urlname was given, so just load the language root for the
-        # currently active language.
-        Language.current_root_page
+                  # Load by urlname. If a language is specified in the request parameters,
+                  # scope pages to it to make sure we can raise a 404 if the urlname
+                  # is not available in that language.
+                  Page.contentpages.where(
+                    urlname:       params[:urlname],
+                    language_id:   Language.current.id,
+                    language_code: params[:lang] || Language.current.code
+                  ).first
+                else
+                  # No urlname was given, so just load the language root for the
+                  # currently active language.
+                  Language.current_root_page
       end
     end
 
     def enforce_primary_host_for_site
       if needs_redirect_to_primary_host?
-        redirect_to url_for(host: current_alchemy_site.host), :status => 301
+        redirect_to url_for(host: current_alchemy_site.host), status: 301
       end
     end
 
@@ -83,7 +83,7 @@ module Alchemy
         raise_not_found_error
       elsif user_sign_in_required?
         session['spree_user_return_to'] = request.path
-        redirect_to spree.login_path, flash: {notice: t('flash_notice.sign_in_content')}
+        redirect_to spree.login_path, flash: { notice: t('flash_notice.sign_in_content') }
       elsif multi_language? && params[:lang].blank?
         redirect_page(lang: Language.current.code)
       elsif multi_language? && params[:urlname].blank? && !params[:lang].blank? && configuration(:redirect_index)
@@ -126,23 +126,23 @@ module Alchemy
       end
     end
 
-    def redirect_page(options={})
+    def redirect_page(options = {})
       defaults = {
-        :lang => (multi_language? ? @page.language_code : nil),
-        :urlname => @page.urlname
+        lang: (multi_language? ? @page.language_code : nil),
+        urlname: @page.urlname
       }
       options = defaults.merge(options)
-      redirect_to show_page_path(additional_params.merge(options)), :status => 301
+      redirect_to show_page_path(additional_params.merge(options)), status: 301
     end
 
     def additional_params
-      params.each do |key, value|
-        params[key] = nil if ["action", "controller", "urlname", "lang"].include?(key)
+      params.each do |key, _value|
+        params[key] = nil if %w(action controller urlname lang).include?(key)
       end
     end
 
     def legacy_urls
-      LegacyPageUrl.joins(:page).where(urlname: params[:urlname], alchemy_pages: {language_id: Language.current.id})
+      LegacyPageUrl.joins(:page).where(urlname: params[:urlname], alchemy_pages: { language_id: Language.current.id })
     end
 
     def last_legacy_url
@@ -192,9 +192,8 @@ module Alchemy
     #
     def render_fresh_page?
       !cache_page? || stale?(etag: page_etag,
-        last_modified: @page.published_at,
-        public: !@page.restricted)
+                             last_modified: @page.published_at,
+                             public: !@page.restricted)
     end
-
   end
 end

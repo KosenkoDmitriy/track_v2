@@ -41,9 +41,7 @@ RSpec.configure do |config|
   config.after(:each) do |example|
     DatabaseCleaner.clean
 
-    if example.metadata[:js]
-      DatabaseCleaner.strategy = :transaction
-    end
+    DatabaseCleaner.strategy = :transaction if example.metadata[:js]
   end
   config.infer_spec_type_from_file_location!
   config.include Capybara::DSL

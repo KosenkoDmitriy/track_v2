@@ -25,7 +25,7 @@ RSpec.describe ReferringSubscriber do
   def update_hash
     {
       id: list_id, email: { email: email },
-      merge_vars: { :WOMENS_REFERRER => 'yes' },
+      merge_vars: { WOMENS_REFERRER: 'yes' },
       double_optin: false,
       update_existing: true
     }

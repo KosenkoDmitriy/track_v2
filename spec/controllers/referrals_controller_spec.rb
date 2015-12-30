@@ -2,14 +2,14 @@ require 'rails_helper'
 
 RSpec.describe ReferralsController do
   let(:user) { double('user', authenticate: true, email: 'don-wan@gmail.com') }
-  let(:host) { {host: 'tracksmith.com'} }
+  let(:host) { { host: 'tracksmith.com' } }
   let(:order) { create :order }
   let!(:lingo) { create :language }
 
   before :each do
     allow(controller).to receive(:spree_current_user).and_return user
     allow(user).to receive(:last_incomplete_spree_order).and_return order
-    allow(MandrillMailer).to receive_message_chain(:configure, :default_url_options) {host}
+    allow(MandrillMailer).to receive_message_chain(:configure, :default_url_options) { host }
   end
 
   it 'responds to the index action' do
@@ -55,7 +55,7 @@ RSpec.describe ReferralsController do
     it 'responds with json' do
       json = { format: :json,
                referral: { referred: email1,
-                           referring: email2 }}
+                           referring: email2 } }
       post :subscribe, json
       expect(subject.status).to eq 201
     end

@@ -9,7 +9,7 @@ Spree::UserRegistrationsController.class_eval do
       if sign_up_params
         if sign_up_params[:email_opt_in]
           begin
-            @mc.lists.subscribe(MAILCHIMP_CONFIG['main_mail_list'], {:email => @user.email}, nil, 'html', false, false, true, true)
+            @mc.lists.subscribe(MAILCHIMP_CONFIG['main_mail_list'], { email: @user.email }, nil, 'html', false, false, true, true)
           rescue => e
             logger.warn "Unable to add user to mailchimp #{e}"
           end
@@ -34,8 +34,8 @@ Spree::UserRegistrationsController.class_eval do
   end
 
   def redirect_back_or_default(default)
-    path = session["spree_user_return_to"]
-    session["spree_user_return_to"] = nil
+    path = session['spree_user_return_to']
+    session['spree_user_return_to'] = nil
     path || default
   end
 end

@@ -6,11 +6,11 @@ RSpec.feature 'Submitting Referrals' do
   let!(:email2) { Faker::Internet.email }
   let!(:email3) { Faker::Internet.email }
   let!(:referrer) { Faker::Internet.email }
-  let(:host) { {host: 'tracksmith.com'} }
+  let(:host) { { host: 'tracksmith.com' } }
 
   before :each do
-    MandrillMailer::deliveries.clear
-    allow(MandrillMailer).to receive_message_chain(:configure, :default_url_options) {host}
+    MandrillMailer.deliveries.clear
+    allow(MandrillMailer).to receive_message_chain(:configure, :default_url_options) { host }
     visit '/referrals/new'
   end
 
