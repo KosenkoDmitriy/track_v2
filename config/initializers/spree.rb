@@ -46,6 +46,6 @@ config = Rails.application.config
 config.spree.calculators.shipping_methods << Spree::Calculator::TieredFlatRateShipping
 
 Spree::Auth::Config[:registration_step] = true
-Spree::Store.default.update_attribute(:name, 'Tracksmith')
+# Spree::Store.default.update_attribute(:name, 'Tracksmith')
 
 Spree.user_class = 'Spree::User'
