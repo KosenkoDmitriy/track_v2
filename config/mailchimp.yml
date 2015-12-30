@@ -5,19 +5,19 @@ development:
   product_notification_mail_list:
 
 test:
-  api_key:
+  api_key: '9058aec94191b67dc274de636c79dd86-us12'
   main_mail_list:
   invitee_mail_list:
   product_notification_mail_list:
 
 integration:
-  api_key:
+  api_key: '9058aec94191b67dc274de636c79dd86-us12'
   main_mail_list:
   invitee_mail_list:
   product_notification_mail_list:
 
 staging:
-  api_key:
+  api_key: '9058aec94191b67dc274de636c79dd86-us12'
   main_mail_list:
   invitee_mail_list:
   product_notification_mail_list:

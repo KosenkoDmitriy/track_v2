@@ -55,7 +55,7 @@ To run all code quality checks:
 
 To run unit tests:
 
-`bundle exec rake test`
+`bundle exec rake test spec`
 
 ### Linting
 [Rubocop](https://github.com/bbatsov/rubocop) will be we use for ruby linting. There has been a slight modification made to the default rules

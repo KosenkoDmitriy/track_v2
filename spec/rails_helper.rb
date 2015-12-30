@@ -7,6 +7,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/poltergeist'
 require 'mandrill_mailer/offline'
+Capybara.javascript_driver = :poltergeist
 
 ::ActiveSupport::Deprecation.silence do
   require 'spree/testing_support/url_helpers'
@@ -46,4 +47,6 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.include Capybara::DSL
   config.include FactoryGirl::Syntax::Methods
+  config.mock_with :rspec
+  config.color = true
 end
