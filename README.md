@@ -84,3 +84,4 @@ The format for the change log should adhere to [Keep a CHANGELOG](http://keepach
 - alchemy_spree v 3.0.4 with alchemy cms v 3.1 incompatible with spree_minicart v 3.0.4 so far
 - spree_store_credits v 3.0.4
 - spree_address_book v 3.0.4
+- spree_advanced_reporting v 3.0.0

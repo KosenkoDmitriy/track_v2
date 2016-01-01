@@ -39,13 +39,10 @@ gem 'polyglot', '~> 0.3.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# gem 'spree', github: 'KosenkoDmitriy/spree', branch: '3-0-stable'
-gem 'spree', path: '../spree' # local repo
+gem 'spree', github: 'KosenkoDmitriy/spree', branch: '3-0-stable'
 gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable' # stripe included (details here www.stripe.com and in readme)
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
-# TODO: upgrade from spree 2.2.x to 3.0.x
-# gem 'spree_advanced_reporting', :git => 'https://github.com/mobispoke/spree_advanced_reporting', :branch => 'master' # 2.2.0.0
-
+gem 'spree_advanced_reporting', github: 'KosenkoDmitriy/spree_advanced_reporting', branch: '3-0-stable'
 gem 'alchemy_spree', github: 'KosenkoDmitriy/alchemy_spree' # , branch: '3-0-v1' # '~> 1.0.0.beta' and alchemy_cms '~> 3.1'
 
 # connecting a custom shop to the ShipStation
