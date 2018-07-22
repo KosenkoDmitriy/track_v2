@@ -1,5 +1,5 @@
 defaults: &defaults
-  host: tracksmith.com
+  host: localhost:3000
 
 # Cloudfront isn't used in development.
 development:

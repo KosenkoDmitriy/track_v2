@@ -1,3 +1,4 @@
+CLOUDFRONT_CONFIG ||= YAML.load_file("#{Rails.root}/config/cloudfront.yml")[Rails.env]
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
