@@ -41,6 +41,10 @@ module Alchemy
 
     private
 
+    def raise_not_found_error
+      render plain: "page not found"
+    end
+
     # Load the current page and store it in @page.
     #
     def load_page

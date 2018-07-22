@@ -21,7 +21,7 @@
   <meta property="twitter:description" content="<%= !@page.meta_description.empty? ? @page.meta_description : !@page.title.empty? ? @page.title : 'Running Deserves Better' %>"/>
   <meta property="twitter:url" content="<%= request.original_url %>"/>
 
-  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
   <!-- Load Typekit -->
   <script src="//use.typekit.net/zkt4wzf.js"></script>
@@ -63,12 +63,13 @@
 	<%= yield %>
 </section>
 
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 <noscript><a href="https://www.olark.com/site/9750-171-10-8135/contact" title="Contact us" target="_blank">Questions?
   Feedback?</a> powered by
   <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a>
 </noscript>
 
-<%= javascript_include_tag 'application' %>
 
 <script>
     ga('create', '<%= GOOGLE_ANALYTICS_CONFIG['api_key'] %>', 'auto');

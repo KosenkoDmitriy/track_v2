@@ -5,8 +5,6 @@
 <head>
   <title>Tracksmith</title>
   <meta name="viewport" content="initial-scale=1">
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
   <%= render_meta_data %>
   <%= csrf_meta_tags %>
@@ -25,12 +23,11 @@
   <meta property="twitter:description" content="<%= !@page.try(:meta_description).try(:empty?) ? @page.try(:meta_description) : !@page.try(:title).try(:empty?) ? @page.try(:title) : 'Running Deserves Better' %>"/>
   <meta property="twitter:url" content="<%= request.original_url %>"/>
 
-  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 
   <!-- Load Typekit -->
   <script src="//use.typekit.net/zkt4wzf.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
-
   <!-- End Load TypeKit -->
 
   <!-- IMAGES FOR OPEN GRAPH AND TWITTER  -->
@@ -74,12 +71,12 @@
     <%= alchemy_preview_mode_code %>
     <%= render "alchemy/menubar" %>
 
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
     <noscript><a href="https://www.olark.com/site/9750-171-10-8135/contact" title="Contact us" target="_blank">Questions?
       Feedback?</a> powered by
       <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a>
     </noscript>
-
-    <%= javascript_include_tag 'application'%>
 
     <script>
         ga('create', '<%= GOOGLE_ANALYTICS_CONFIG['api_key'] %>', 'auto');
