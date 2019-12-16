@@ -378,7 +378,7 @@ GEM
       dragonfly (~> 1.0)
       fog
     erubis (2.7.0)
-    excon (0.45.4)
+    excon (0.71.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
